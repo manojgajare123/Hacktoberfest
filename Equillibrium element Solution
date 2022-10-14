@@ -1,0 +1,33 @@
+import java.util.*;
+class Main{
+    public static void main(String [] args){
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        int ans=-1;
+        
+        int [] arr= new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            int j=i-1;
+            int k=i+1;
+            int sum=0;
+            int sum1=0;
+            while(j>=0){
+                sum=sum+arr[j];
+                j--;
+            }
+            while(k<n){
+                sum1=sum1+arr[k];
+                k++;
+            }
+            
+            if(sum==sum1){
+                ans=i+1;
+                break;
+            }
+        }
+        System.out.println(ans);
+    }
+}
