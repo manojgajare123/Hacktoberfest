@@ -1,0 +1,52 @@
+//Enter code here
+import java.util.*;
+import java.io.*;
+class Main{
+    static int find(String s1[] ,String s2 [],int i,int j,int n,int m){
+        if(i == n || j == m){
+            return 0;
+        }
+        
+        if(s1[i].equals(s2[j]))
+         return 1+ find(s1,s2,i+1,j+1,n,m);
+         else{
+          return Math.max(find(s1,s2,i+1,j,n,m),find(s1,s2,i,j+1,n,m));
+         }
+    }
+    public static void main(String [] args){
+    FastReader input = new FastReader();
+     String str1 [] = input.nextLine().split("");
+     String str2 [] = input.nextLine().split("");
+     System.out.println(find(str1,str2,0,0,str1.length,str2.length));
+    }
+    static class FastReader
+  {
+    BufferedReader br;
+    StringTokenizer st;
+    public FastReader()
+    {
+      br = new BufferedReader(new InputStreamReader(System.in));
+    }
+    String next()
+    {
+      while (st == null || !st.hasMoreElements()){
+        try { st = new StringTokenizer(br.readLine()); }
+        catch (IOException e) { e.printStackTrace(); }
+      }
+      return st.nextToken();
+    }
+    int nextInt() { return Integer.parseInt(next()); }
+    long nextLong() { return Long.parseLong(next()); }
+    double nextDouble(){ return Double.parseDouble(next()); }
+    String nextLine(){
+      String str = "";
+      try { str = br.readLine(); }
+      catch (IOException e) { e.printStackTrace(); }
+      return str;
+    }
+  }
+
+    
+  
+  
+}
