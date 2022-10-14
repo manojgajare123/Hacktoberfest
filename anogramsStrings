@@ -1,0 +1,45 @@
+
+// check to check two strings are anograms or not ???
+
+
+
+//  String str = Arrays.toString(arr) ; // ->> convert array into String
+
+//  char arr[] = str.tocharArray() ;  //  convert String into char array
+
+//  boolean check = Arrays.equals(arr1, arr2) ;  // compare two arrays are equal or not
+
+
+import java.util.Arrays ;
+
+class Node{
+	char data ;
+	Node next ;
+	
+	Node(char data){
+		this.data = data ;
+	}
+}
+
+class anogramsStrings{
+	
+	public static void main(String[] args){
+
+		String str1 = "listen" ;
+		String str2 = "silent" ;
+	
+		char[] arr1 = str1.toCharArray() ;
+		char[] arr2 = str2.toCharArray() ;
+		// int arr1[] = {1,2,3,4,5,6} ;
+		// int arr2[] = {1,4,6,2,5,3} ;
+		
+		Arrays.sort(arr1) ;
+		Arrays.sort(arr2) ;
+	
+		System.out.println(Arrays.toString(arr1)) ;
+		System.out.println(Arrays.toString(arr2)) ;
+	
+		System.out.println("\nans is " + Arrays.equals(arr1, arr2)) ;
+		
+	}
+}
